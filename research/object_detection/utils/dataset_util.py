@@ -37,6 +37,9 @@ def bytes_list_feature(value):
 def float_list_feature(value):
   return tf.train.Feature(float_list=tf.train.FloatList(value=value))
 
+# SOREN: added this one
+def float_feature(value):
+  return tf.train.Feature(float_list=tf.train.FloatList(value=[value]))
 
 def read_examples_list(path):
   """Read list of training or validation examples.
@@ -84,5 +87,3 @@ def recursive_parse_xml_to_dict(xml):
         result[child.tag] = []
       result[child.tag].append(child_result[child.tag])
   return {xml.tag: result}
-
-
