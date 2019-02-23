@@ -285,8 +285,9 @@ def write_graph_and_checkpoint(inference_graph_def,
                                input_saver_def,
                                trained_checkpoint_prefix):
   """Writes the graph and the checkpoint into disk."""
-  for node in inference_graph_def.node:
-    node.device = ''
+  # SOREN: don't clear device - use GPU after exporting
+  # for node in inference_graph_def.node:
+  #   node.device = ''
   with tf.Graph().as_default():
     tf.import_graph_def(inference_graph_def, name='')
     with session.Session() as sess:
@@ -386,8 +387,9 @@ def _export_inference_graph(input_type,
     inference_graph_def = tf.get_default_graph().as_graph_def()
     inference_graph_path = os.path.join(output_directory,
                                         'inference_graph.pbtxt')
-    for node in inference_graph_def.node:
-      node.device = ''
+    # SOREN: don't clear device - use GPU after exporting
+    # for node in inference_graph_def.node:
+    #   node.device = ''
     with gfile.GFile(inference_graph_path, 'wb') as f:
       f.write(str(inference_graph_def))
 
