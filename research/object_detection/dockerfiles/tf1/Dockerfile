@@ -5,6 +5,12 @@ ARG DEBIAN_FRONTEND=noninteractive
 # Install apt dependencies
 RUN apt-get update && apt-get install -y \
     git \
+    nodejs \
+    npm \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
+    libgl1-mesa-glx \
     gpg-agent \
     python3-cairocffi \
     protobuf-compiler \
