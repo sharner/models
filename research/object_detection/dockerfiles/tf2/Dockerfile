@@ -6,12 +6,19 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y \
     git \
     gpg-agent \
+    nodejs \
+    npm \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
+    libgl1-mesa-glx \
     python3-cairocffi \
     protobuf-compiler \
     python3-pil \
     python3-lxml \
     python3-tk \
     wget
+
 
 # Install gcloud and gsutil commands
 # https://cloud.google.com/sdk/docs/quickstart-debian-ubuntu
