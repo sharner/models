@@ -21,7 +21,8 @@ REQUIRED_PACKAGES = [
     'lvis',
     'scipy',
     'pandas',
-    'tf-models-official'
+    'tf-models-official',
+    'tf-nightly'
 ]
 
 setup(
