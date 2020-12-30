@@ -22,8 +22,6 @@ REQUIRED_PACKAGES = [
     'scipy',
     'pandas',
     'tf-models-official',
-    'tf-nightly',
-    'tf-nightly-gpu'
 ]
 
 setup(
